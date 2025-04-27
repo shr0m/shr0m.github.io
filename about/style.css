@@ -1,0 +1,269 @@
+.navbar {
+  position: fixed; /* Keep the nav bar fixed at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for the navbar */
+  padding: 10px 0;
+  z-index: 100; /* Ensure it stays on top of everything */
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #000 0%, #13022e 100%);
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure the body height is full */
+  position: relative;
+  padding-bottom: 50px; /* Ensure the footer image doesn't overlap content */
+}
+
+.imagesection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.imagesection .aboutimages {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  z-index: 3; /* Ensure these images are above the footer */
+}
+
+/* Clouds should remain at the lowest layer */
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  z-index: 0; /* Clouds below everything else */
+  pointer-events: none; /* Clouds won't block interactions */
+}
+
+/* Update other sections (text and images) to have a higher z-index than clouds */
+header, main, section, .imagesection {
+  position: relative;
+  z-index: 1; /* Ensure these sections are above the clouds */
+}
+
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 900px; /* Only top section */
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Individual star */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkle 2s infinite ease-in-out alternate;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  min-height: 100px;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+#quote {
+  text-align: center;
+  font-size: 14pt;
+}
+
+#profileimage {
+  top: 30px;
+  display: block;
+  margin: 2rem auto 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgb(185, 185, 185);
+  box-shadow: 0 0 20px rgb(185, 185, 185), 0 0 40px rgb(185, 185, 185), 0 0 60px rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section fly-in animation */
+section {
+  opacity: 0;
+  transform: translateY(50px);  /* Start below the screen */
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);  /* Fly in to original position */
+}
+
+#plane {
+  position: absolute;
+  top: 60%; /* Move it to match the clouds */
+  transform: translateY(-50%); /* Center it perfectly on that 60% line */
+  left: -200px; /* Start offscreen */
+  width: 100px;
+  z-index: 5; /* Ensure the plane is above other elements */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Flying animation */
+@keyframes flyAcross {
+  0% {
+    left: -200px;
+    opacity: 0.5;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.fly {
+  animation: flyAcross 1s linear forwards;
+}
+
+
+/*Font stuff (unchanged)*/
+.titillium-web-extralight {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.titillium-web-light {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.titillium-web-regular {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.titillium-web-semibold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.titillium-web-bold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.titillium-web-black {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.titillium-web-extralight-italic {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.titillium-web-light-italic {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.titillium-web-regular-italic {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.titillium-web-semibold-italic {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.titillium-web-bold-italic {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
