@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>shr0m | Welcome</title>
+  <title>shr0m | About</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
   
   <nav class="navbar">
     <ul>
-      <li><a href="../home/">Home</a></li>
+      <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
       <li><a href="../projects/">Projects</a></li>
     </ul>
@@ -23,10 +23,12 @@
 
   <div id="stars"></div>
   <section>
-    <img id="profileimage" src="./images/pfp.jpeg">
+    <img id="profileimage" src="../images/pfp.jpeg">
   </section>
   <header>
-    <h1 class="titillium-web-bold" id="typingEffect"></h1> <!-- Add id to target in JS -->
+    <h1 class="titillium-web-bold" id="typingEffect">
+      <span id="typedText"></span><span id="cursor">|</span>
+    </h1>
   </header>
 
   <section>
@@ -53,15 +55,15 @@
     </section>
 
     <section class="imagesection">
-      <img class="aboutimages" src="./images/cadet1.jpg">
-      <img class="aboutimages" src="./images/cadet2.jpg">
-      <img class="aboutimages" src="images/cadet3.jpg">
-      <img class="aboutimages" src="images/cadet4.jpg">
+      <img class="aboutimages" src="../images/cadet1.jpg">
+      <img class="aboutimages" src="../images/cadet2.jpg">
+      <img class="aboutimages" src="../images/cadet3.jpg">
+      <img class="aboutimages" src="../images/cadet4.jpg">
       
       <!-- Static Cloud Images -->
-      <img class="cloud" src="./images/cloud.png" alt="Cloud 1">
-      <img class="cloud" src="./images/cloud.png" alt="Cloud 2">
-      <img class="cloud" src="./images/cloud.png" alt="Cloud 3">
+      <img class="cloud" src="../images/cloud.png" alt="Cloud 1">
+      <img class="cloud" src="../images/cloud.png" alt="Cloud 2">
+      <img class="cloud" src="../images/cloud.png" alt="Cloud 3">
     </section>
 
     <section>
@@ -78,11 +80,11 @@
     </section>
 
     <section class="imagesection">
-      <img class="aboutimages" src="./images/cq.png">
+      <img class="aboutimages" src="../images/cq.png">
     </section>
 
   </main>
   <script src="script.js"></script>
-  <img id="plane" src="./images/plane.png" alt="Flying Plane">
+  <img id="plane" src="../images/plane.png" alt="Flying Plane">
 </body>
 </html>
