@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cloud.style.bottom = `${Math.random() * 50 + 10}%`;
 
     // Random width (50px to 100px)
-    const cloudSize = Math.random() * 50 + 50;
+    const cloudSize = Math.random() * 50 + 100;
     cloud.style.width = `${cloudSize}px`;
 
     // Random opacity (0.4 to 0.8)
