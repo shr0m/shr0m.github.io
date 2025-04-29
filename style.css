@@ -1,0 +1,261 @@
+/* =======================
+   ANIMATIONS
+   ======================= */
+
+/* Fly-up animation for link-sections */
+@keyframes flyUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 100px); /* Start lower on the screen */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0); /* Final position */
+    }
+}
+
+/* =======================
+   STARS AND BACKGROUND
+   ======================= */
+
+/* Stars effect */
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Only top section */
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: sparkle 2s infinite ease-in-out alternate;
+}
+
+/* Sparkle animation for stars */
+@keyframes sparkle {
+    from {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* =======================
+   HEADER & BODY STYLES
+   ======================= */
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #000 0%, #13022e 100%);
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px; /* Ensure the footer image doesn't overlap content */
+    touch-action: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px 1rem 1rem; /* Top padding increased here */
+    min-height: 100px;
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
+/* =======================
+   NAVBAR STYLES
+   ======================= */
+
+.navbar {
+    position: fixed; /* Keep the nav bar fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 100; /* Ensure it stays on top of everything */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   LINK SECTIONS (Content below header)
+   ======================= */
+
+/* Link section flying effect */
+.link-sections {
+    position: absolute;
+    top: 200px; /* Adjust as needed */
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translate(-50%, 100px); /* Start below the screen */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.link-sections.fly-in {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    animation: flyUp 0.8s ease-out forwards;
+}
+
+/* Link card styles */
+.link-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 50px rgba(0, 0, 0, 0.7);
+}
+
+.link-card img {
+    width: auto;
+    height: 150px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.link-card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* =======================
+   FONT STYLES (Titillium Web)
+   ======================= */
+
+.titillium-web-extralight {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.titillium-web-light {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.titillium-web-regular {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.titillium-web-semibold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.titillium-web-bold {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.titillium-web-black {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.titillium-web-extralight-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.titillium-web-light-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.titillium-web-regular-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.titillium-web-semibold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.titillium-web-bold-italic {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
