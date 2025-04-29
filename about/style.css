@@ -145,6 +145,7 @@
      =========================== */
   .cloud {
     position: absolute;
+
     width: 200px;
     height: auto;
     object-fit: contain;
