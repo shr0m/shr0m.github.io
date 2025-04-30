@@ -1,4 +1,32 @@
 /* =======================
+   FLY-IN ANIMATION
+   ======================= */
+   @keyframes flyUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px); /* Starts from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at original position */
+    }
+}
+
+.card {
+    animation: flyUp 0.8s ease-out forwards; /* Apply the animation */
+    opacity: 0; /* Start as invisible */
+}
+
+.card:nth-child(even) {
+    animation-delay: 0.2s; /* Slight delay for even cards */
+}
+
+.card:nth-child(odd) {
+    animation-delay: 0.4s; /* Slight delay for odd cards */
+}
+
+
+/* =======================
    STARS AND BACKGROUND
    ======================= */
    #stars {

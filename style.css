@@ -6,11 +6,11 @@
 @keyframes flyUp {
     from {
         opacity: 0;
-        transform: translate(-50%, 100px); /* Start lower on the screen */
+        transform: translateY(100px);
     }
     to {
         opacity: 1;
-        transform: translate(-50%, 0); /* Final position */
+        transform: translateY(0);
     }
 }
 
@@ -53,48 +53,6 @@
 }
 
 /* =======================
-   HEADER & BODY STYLES
-   ======================= */
-
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-body {
-    margin: 0;
-    background: linear-gradient(to bottom, #000 0%, #13022e 100%);
-    color: #fff;
-    line-height: 1.6;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 50px; /* Ensure the footer image doesn't overlap content */
-    touch-action: none;
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 70px 1rem 1rem; /* Top padding increased here */
-    min-height: 100px;
-    background: transparent;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    margin: 0;
-    margin-top: 0.5rem;
-}
-
-/* =======================
    NAVBAR STYLES
    ======================= */
 
@@ -133,27 +91,70 @@ h1 {
 }
 
 /* =======================
+   BODY AND HEADER STYLES
+   ======================= */
+
+   html, body {
+    height: 100%;  /* Ensures full height */
+    min-height: 100%;  /* Prevents content from shrinking */
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #000 0%, #13022e 100%);  /* Gradient background */
+    color: #fff;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;  /* Ensures the body stretches across the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* Start content from top */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px 1rem 1rem;  /* Top padding increased */
+    min-height: 100px;
+    background: transparent;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin: 0;
+    margin-top: 0.5rem;
+}
+
+/* =======================
    LINK SECTIONS (Content below header)
    ======================= */
 
-/* Link section flying effect */
+/* Flexbox layout for link sections */
 .link-sections {
-    position: absolute;
-    top: 200px; /* Adjust as needed */
-    left: 50%;
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 20px;
+    padding: 90px;
     z-index: 2;
     opacity: 0;
-    transform: translate(-50%, 100px); /* Start below the screen */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    flex-wrap: wrap;  /* Ensures responsiveness on smaller screens */
+    position: relative;
+    transform: none;
 }
 
 .link-sections.fly-in {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translateY(0);  /* Only vertical, no left offset */
     animation: flyUp 0.8s ease-out forwards;
 }
 
@@ -189,6 +190,79 @@ h1 {
     font-size: 1.2rem;
     font-family: "Titillium Web", sans-serif;
 }
+
+
+/* =======================
+   LINKEDIN ICON STYLES
+   ======================= */
+
+.linkedin-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 10;
+    position: relative;
+    margin-top: -10px;
+}
+
+.linkedin-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.linkedin-icon svg {
+    height: 20px;
+    width: 20px;
+    fill: white;
+}
+
+
+/* =======================
+   TRYHACKME BADGE FLY UP
+   ======================= */
+
+   @keyframes flyUpBadge {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tryhackme-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;  /* Add padding to avoid touching screen edges on small devices */
+    overflow: hidden;
+    box-sizing: border-box;
+    opacity: 0; /* Make sure it's hidden initially */
+    animation: flyUpBadge 1s ease-out forwards; /* Apply animation */
+    animation-delay: 0.5s;  /* Optional: delay the animation */
+}
+
+.tryhackme-iframe {
+    width: 100%;
+    max-width: 330px;
+    height: 300px;
+    border: none;
+}
+
 
 /* =======================
    FONT STYLES (Titillium Web)

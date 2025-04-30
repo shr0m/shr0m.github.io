@@ -1,6 +1,11 @@
 /* ===========================
    GENERAL LAYOUT & BODY STYLES
    =========================== */
+   
+   html, body {
+    overflow-x: hidden;
+   }
+   
    body {
     margin: 0;
     padding-bottom: 50px; /* Prevent footer overlap */
@@ -8,7 +13,7 @@
     background: linear-gradient(to bottom, #000 0%, #13022e 100%);
     color: #fff;
     line-height: 1.6;
-    position: relative;
+    position: relative; 
   }
   
   /* ===========================

@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* ===============================
+    
+  /* ===============================
        STAR EFFECT (Background Stars)
        =============================== */
     const starsContainer = document.getElementById("stars");
@@ -80,4 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.classList.remove("active");
         document.body.classList.remove("blurred");
       });
+
+      // Get all project cards and add the class to trigger animation
+    const card2 = document.querySelectorAll('.card');
+    cards2.forEach((card) => {
+        card2.classList.add('fly-in');  // Add class to trigger fly-in
+    });
   });

@@ -54,4 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       linkSection.classList.add('fly-in');
     }, 500); // Delay to ensure smoother appearance
+
+    /* ===============================
+       Trigger TryHackMe Badge Animation
+       =============================== */
+       const tryHackMeBadge = document.querySelector('.tryhackme-badge');
+       setTimeout(() => {
+           tryHackMeBadge.classList.add('fly-in');
+       }, 500);  // Adjust delay if needed
   });
